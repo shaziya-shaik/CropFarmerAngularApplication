@@ -1,0 +1,17 @@
+<h2>My Crops</h2>
+
+<div *ngIf="crops.length === 0">You have not added any crops yet.</div>
+
+<div class="crop-list">
+  <div class="crop-card" *ngFor="let crop of crops">
+    <h3>{{ crop.cropName }}</h3>
+    <p>Quantity: {{ crop.quantity }} kg</p>
+    <p>Price: ₹{{ crop.price }}</p>
+    <div class="actions">
+      <button (click)="editCrop(crop)">Edit</button>
+      <button (click)="deleteCrop(crop)">Delete</button>
+    </div>
+  </div>
+</div>
+
+<button class="add-btn" (click)="addCrop()">Add New Crop</button>

@@ -1,0 +1,25 @@
+h2 { margin-bottom: 12px; }
+.crop-list { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+.crop-card {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px;
+  width: 180px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-control button {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.crop-card:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+button { margin-top: 6px; padding: 6px 10px; cursor: pointer; border-radius: 4px; border: none; background-color: #0b2d3a; color: white; }
+button:hover { background-color: #14506e; }

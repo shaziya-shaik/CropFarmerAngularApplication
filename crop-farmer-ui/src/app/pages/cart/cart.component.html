@@ -1,0 +1,40 @@
+<h2>Cart</h2>
+
+<div *ngIf="cartItems.length === 0">
+  Your cart is empty.
+</div>
+
+<div class="cart-list">
+  <div class="cart-item" *ngFor="let item of cartItems">
+   <h3>Crop Name: {{ item.cropName }}</h3>
+
+  <button (click)="decrease(item)">−</button>
+  <span>{{ item.quantity }}</span>
+  <button (click)="increase(item)">+</button>
+
+  <p>Total: ₹{{ item.quantity * item.price }}</p>
+
+  <button (click)="removeItem(item)">Remove</button>
+</div>
+</div>
+
+<h3 *ngIf="cartItems.length > 0">
+  Grand Total: ₹{{ getTotal() }}
+</h3>
+
+<div class="cart-actions" *ngIf="cartItems.length > 0">
+
+  <button (click)="clearCart()">
+    Clear Cart
+  </button>
+
+  <button
+    (click)="placeOrder()"
+    [disabled]="isPlacingOrder">
+    {{ isPlacingOrder ? 'Placing Order...' : 'Place Order' }}
+  </button>
+
+</div>
+
+
+

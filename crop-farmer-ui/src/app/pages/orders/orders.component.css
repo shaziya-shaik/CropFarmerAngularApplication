@@ -1,0 +1,41 @@
+h2 { margin-bottom: 12px; }
+.order-list { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+.order-card {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px;
+  width: 200px;
+  transition: transform 0.2s ease;
+}
+.order-card:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+p { margin: 4px 0; }
+
+.created { color: gray; }
+.processing { color: orange; }
+.delivered { color: green; }
+.cancelled { color: red; }
+
+.cancel-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.processing {
+  color: orange;
+  font-weight: bold;
+}
+
+.cancelled {
+  color: red;
+  font-weight: bold;
+}
+
+.delivered {
+  color: green;
+  font-weight: bold;
+}

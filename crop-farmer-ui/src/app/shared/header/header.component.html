@@ -1,0 +1,31 @@
+<header class="navbar">
+  <!-- Left: Logo -->
+  <div class="logo">🌾 Crop Farmer</div>
+
+  <!-- Center: Menu -->
+  <nav class="menu">
+    <button class="nav-btn" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Dashboard
+    </button>
+
+    <!-- Farmer -->
+    <ng-container *ngIf="(role$ | async) === 'FARMER'">
+      <button class="nav-btn" routerLink="/add-crop" routerLinkActive="active">Add Crop</button>
+      <button class="nav-btn" routerLink="/my-crops" routerLinkActive="active">My Crops</button>
+      <button class="nav-btn" routerLink="/orders" routerLinkActive="active">Orders</button>
+    </ng-container>
+
+    <!-- User -->
+    <ng-container *ngIf="(role$ | async) === 'USER'">
+      <button class="nav-btn" routerLink="/browse-crops" routerLinkActive="active">Browse Crops</button>
+      <button class="nav-btn" routerLink="/cart" routerLinkActive="active">Cart</button>
+      <button class="nav-btn" routerLink="/orders" routerLinkActive="active">Orders</button>
+    </ng-container>
+  </nav>
+
+  <!-- Right: User Info -->
+  <div class="user-info">
+    <span class="user-name">Hi, {{( username$ | async)?.split('@')?.[0] }}</span>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+</header>
