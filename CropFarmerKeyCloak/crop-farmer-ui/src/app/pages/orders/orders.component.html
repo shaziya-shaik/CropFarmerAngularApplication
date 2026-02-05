@@ -1,0 +1,39 @@
+<h2>Orders</h2>
+
+<div *ngIf="orders.length === 0">
+  No orders yet.
+</div>
+
+<div class="order-list">
+  <div class="order-card" *ngFor="let order of orders">
+
+    <h3>Order #{{ order.orderId }}</h3>
+    <p><b>Date:</b> {{ order.orderDate | date:'medium' }}</p>
+
+    <p>
+      <b>Status:</b>
+      <span [ngClass]="order.orderStatus.toLowerCase()">
+        {{ order.orderStatus }}
+      </span>
+    </p>
+
+    <p><b>Total:</b> ₹{{ order.totalAmount }}</p>
+
+    <button
+      *ngIf="order.orderStatus === 'PROCESSING'"
+      (click)="cancelOrder(order.orderId)"
+      class="cancel-btn">
+      Cancel Order
+    </button>
+
+    <hr />
+
+    <div *ngFor="let item of order.orderItems">
+      <p><b>{{ item.cropName }}</b></p>
+      <p>{{ item.quantity }} kg × ₹{{ item.priceAtOrderTime }}</p>
+      <p><b>Subtotal:</b> ₹{{ item.subTotal }}</p>
+      <hr />
+    </div>
+
+  </div>
+</div>

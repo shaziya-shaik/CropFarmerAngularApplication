@@ -1,0 +1,19 @@
+<h2>Browse Crops</h2>
+
+<div *ngIf="crops.length === 0">
+  No crops available.
+</div>
+
+<div class="crop-list">
+  <div class="crop-card" *ngFor="let crop of crops">
+    <h3>{{ crop.cropName }}</h3>
+    <p>Price: ₹{{ crop.price }}</p>
+    <p>Available: {{ crop.quantity }} kg</p>
+    
+    <button
+      (click)="addToCart(crop)"
+      [disabled]="crop.addedToCart">
+      {{ crop.addedToCart ? 'Added to Cart' : 'Add to Cart' }}
+    </button>
+  </div>
+</div>

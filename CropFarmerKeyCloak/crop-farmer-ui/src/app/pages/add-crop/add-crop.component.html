@@ -1,0 +1,40 @@
+<div class="add-crop-container">
+  <h2>Add New Crop</h2>
+
+ <form class="crop-form" (ngSubmit)="submitCrop()">
+
+  <div class="form-group">
+    <label>Crop Name</label>
+    <input type="text" [(ngModel)]="crop.cropName" name="cropName" required>
+  </div>
+
+  <div class="form-group">
+    <label>Quantity</label>
+    <input type="number" [(ngModel)]="crop.quantity" name="quantity" required>
+  </div>
+
+  <div class="form-group">
+    <label>Price</label>
+    <input type="number" [(ngModel)]="crop.price" name="price" required>
+  </div>
+
+   <!-- Location -->
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" id="location" placeholder="Village / District">
+    </div>
+
+    <!-- Harvest Date -->
+    <div class="form-group">
+      <label for="harvestDate">Harvest Date</label>
+      <input type="date" id="harvestDate">
+    </div>
+
+
+  <button type="submit" class="submit-btn">Save Crop</button>
+</form>
+
+
+</div>
+
+

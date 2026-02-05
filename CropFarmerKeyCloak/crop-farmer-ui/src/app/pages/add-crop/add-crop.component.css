@@ -1,0 +1,63 @@
+.add-crop-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.add-crop-container h2 {
+  text-align: center;
+  color: #0b2d3a;
+  margin-bottom: 25px;
+}
+
+/* Form Styles */
+.crop-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.crop-form label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.crop-form input[type="text"],
+.crop-form input[type="number"],
+.crop-form input[type="date"],
+.crop-form input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+.crop-form input:focus {
+  border-color: #0b2d3a;
+  outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0b2d3a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #144559;
+  transform: translateY(-2px);
+}
